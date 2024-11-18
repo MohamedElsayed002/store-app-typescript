@@ -14,6 +14,9 @@ import PaginationContainer from "./PaginationContainer";
 import ProductsList from "./ProductsList";
 import FormInput from "./FormInput";
 import SelectInput from "./FormSelect";
+import SelectProductColor from "./SelectProductColor";
+import SelectProductAmount from "./SelectProductAmount";
+
 export {
     Header,
     Navbar,
@@ -28,5 +31,7 @@ export {
     PaginationContainer,
     ProductsList,
     SelectInput,
-    FormInput
+    SelectProductColor,
+    FormInput,
+    SelectProductAmount
 }
