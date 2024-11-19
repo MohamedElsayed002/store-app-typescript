@@ -1,7 +1,7 @@
 
 import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { customFetch , type SingleProductResponse } from "../utils";
+import { CartItem, customFetch , type SingleProductResponse } from "../utils";
 import { formatAsDollars } from "../utils/formatAsDollars";
 import { useState } from "react";
 import { Button } from "../components/ui/button";
@@ -9,6 +9,8 @@ import { Separator } from "../components/ui/separator";
 import { type LoaderFunction } from "react-router-dom";
 import { SelectProductColor } from "../components";
 import SelectProductAmount, { Mode } from "../components/SelectProductAmount";
+import { addItem } from "../features/cart/cartSlice";
+import { useAppDispatch } from "../hook";
 
 export const loader : LoaderFunction = async ({params}) : Promise<SingleProductResponse> => {
     const response = await customFetch<SingleProductResponse>(`/products/${params.id}`)
@@ -23,8 +25,22 @@ const SingleProduct = () => {
     const [productColor,setProductColor] = useState(colors[0])
     const [amount,setAmount] = useState(1)
 
+    const dispatch = useAppDispatch()
+
+    const cartProduct : CartItem = {
+        cartID : product.id + productColor,
+        productID : product.id,
+        image,
+        title,
+        price,
+        productColor,
+        amount,
+        company
+    }
+
     const addToCart = () => {
         console.log('add to cart')
+        dispatch(addItem(cartProduct))
     }
 
     return (

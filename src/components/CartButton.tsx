@@ -2,10 +2,10 @@
 import { Button } from "./ui/button"
 import { ShoppingCart } from "lucide-react"
 import { Link } from "react-router-dom"
+import { useAppSelector } from "../hook"
 const CartButton = () => {
 
-  const numItemsInCart = 5
-
+  const numItemsInCart = useAppSelector((state) => state.cartSlice.numItemsInCart)
   return (
     <Button
       asChild 

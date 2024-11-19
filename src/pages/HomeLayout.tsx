@@ -2,6 +2,7 @@
 import { Outlet , useNavigation } from "react-router-dom";
 import { Header, Navbar } from "../components";
 import Loading from "../components/Loading";
+import { ToastDemo } from "../components/ToastDemo";
 
 
 const HomeLayout = () => {
