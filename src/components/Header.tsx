@@ -1,19 +1,23 @@
 import { Link , useNavigate  } from "react-router-dom";
 import { Button } from "./ui/button";
-import { useState } from "react";
-
-
+import { useAppDispatch , useAppSelector } from "../hook";
+import { logoutUser } from "../features/user/userSlice";
+import { clearCart } from "../features/cart/cartSlice";
+import { useToast } from "../hooks/use-toast";
 const Header = () => {
 
-    const navigate = useNavigate()
 
-    const [user, setUser] = useState<{ username: string } | null>({
-        username: 'demo user',
-      });
-    
+
+    const dispatch = useAppDispatch()
+    const navigate = useNavigate()
+    const {toast} = useToast()
+    const user = useAppSelector(state => state.userSlice.user)
+
       const handleLogout = () => {
-        navigate('/');
-        setUser(null);
+        dispatch(clearCart())
+        dispatch(logoutUser())
+        toast({description : 'Logged out'})
+        navigate('/')
       };
 
     
@@ -26,7 +30,7 @@ const Header = () => {
                 {
                     user ? (
                         <div className='flex gap-x-2 sm:gap-x-8 items-center'>
-                        <p className="text-xs sm:text-sm">Hello, {user?.username}</p>
+                        <p className="text-xs sm:text-sm">Hello, {user.username}</p>
                         <Button variant='link' size='sm' onClick={handleLogout}>
                             Logout
                         </Button>

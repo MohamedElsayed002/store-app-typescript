@@ -8,7 +8,7 @@ import { CartItemList , SectionTitle , CartTotals} from "../components";
 
 const Cart = () => {
 
-    const user = 'md';
+    const user = useAppSelector((state) => state.userSlice.user)
 
     const numItemsInCart = useAppSelector((state) => state.cartSlice.numItemsInCart)
 

@@ -18,15 +18,13 @@ import SelectProductColor from "./SelectProductColor";
 import SelectProductAmount from "./SelectProductAmount";
 import CartTotals from "./CartTotals";
 import CartItemList from "./CartItemList";
-import CartItemColumns from "./CartItemColumns";
-
+import SubmitBtn from "./SubmitBtn";
 export {
     Header,
     Navbar,
     ErrorElement,
     Hero,
     CartItemList,
-    CartItemColumns,
     HeroCarousel,
     CartTotals,
     FeaturedProducts,
@@ -39,5 +37,6 @@ export {
     SelectInput,
     SelectProductColor,
     FormInput,
+    SubmitBtn,
     SelectProductAmount
 }
