@@ -30,7 +30,7 @@ const PaginationContainer = () => {
 
     return (
       <PaginationItem key={pageNumber}>
-        <PaginationLink size='' to={url} isActive={isActive}>
+        <PaginationLink  to={url} isActive={isActive}>
           {pageNumber}
         </PaginationLink>
       </PaginationItem>
@@ -46,11 +46,11 @@ const PaginationContainer = () => {
     <Pagination className='mt-16'>
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious size='' to={prevUrl} />
+          <PaginationPrevious  to={prevUrl} />
         </PaginationItem>
         {renderPagination}
         <PaginationItem>
-          <PaginationNext size='' to={nextUrl} />
+          <PaginationNext  to={nextUrl} />
         </PaginationItem>
       </PaginationContent>
     </Pagination>

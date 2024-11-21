@@ -19,6 +19,8 @@ import SelectProductAmount from "./SelectProductAmount";
 import CartTotals from "./CartTotals";
 import CartItemList from "./CartItemList";
 import SubmitBtn from "./SubmitBtn";
+import CheckoutForm from "./CheckoutForm";
+import OrdersList from "./OrdersList";
 export {
     Header,
     Navbar,
@@ -38,5 +40,7 @@ export {
     SelectProductColor,
     FormInput,
     SubmitBtn,
-    SelectProductAmount
+    SelectProductAmount,
+    CheckoutForm,
+    OrdersList
 }

@@ -7,7 +7,6 @@ import { customFetch } from '../utils';
 import {toast} from '../hooks/use-toast'
 import { type ReduxStore } from '../store';
 import { loginUser } from '../features/user/userSlice';
-import { useAppDispatch } from '../hook';
 import { AxiosResponse } from 'axios';
 import { useDispatch } from 'react-redux';
 

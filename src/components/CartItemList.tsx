@@ -1,5 +1,4 @@
 
-import React from 'react'
 import { useAppSelector } from '../hook'
 import { Card } from './ui/card'
 import { FirstColumn, FourthColumn, SecondColumn, ThirdColumn } from './CartItemColumns'

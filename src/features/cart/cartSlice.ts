@@ -1,6 +1,6 @@
 
 
-import { toast, useToast } from "../../hooks/use-toast";
+import { toast } from "../../hooks/use-toast";
 import { type CartItem , type CartState } from "../../utils";
 import { createSlice , PayloadAction } from "@reduxjs/toolkit";
 

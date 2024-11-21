@@ -1,6 +1,3 @@
-import { Check } from "lucide-react";
-import { Button } from "./components/ui/button";
-import { useAppSelector } from "./hook";
 import {
   HomeLayout,
   LandingPage,
@@ -22,11 +19,13 @@ import { ErrorElement } from "./components";
 import { loader as LandingLoading } from "./pages/Landing";
 import {loader as ProductsLoading} from './pages/Products'
 import {loader as SingleProductLoader} from './pages/SingleProduct'
-
+import {loader as CheckoutLoader} from './pages/Checkout'
+import {loader as OrdersLoader} from './pages/Orders'
 
 
 import {action as RegisterAction} from './pages/Register'
 import {action as LoginAction} from './pages/Login'
+import {action as CheckoutAction} from './components/CheckoutForm'
 
 import { store } from "./store";
 const router = createBrowserRouter([
@@ -61,11 +60,14 @@ const router = createBrowserRouter([
       },
       {
         path : 'checkout',
-        element :  <Checkout/>
+        element :  <Checkout/>,
+        loader : CheckoutLoader(store),
+        action : CheckoutAction(store),
       },
       {
         path : 'orders',
-        element : <Orders/>
+        element : <Orders/>,
+        loader : OrdersLoader(store),
       },
     ]
   },
